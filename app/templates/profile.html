@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Card</title>
+<link rel="stylesheet" href="C:\Users\Enrico\Documents\school\info3180-lab2\app\static\css\app.css"> <!-- Make sure this path is correct -->
+</head>
+<body>
+
+<div class="myprofilecard">
+    <div class="top-section">
+        
+        <img src="{{ url_for('static', filename='daniel.jpg') }}" alt="picture of supposed me"/>
+        <div class="name">Daniel Leon</div>
+        <div class="tag">@gashara</div>
+        <div class="location">Kingston, Jamaica</div>
+        <div class="date">Joined {{date}}</div>
+    </div>
+
+    <div class="bottom-section">
+        
+        <div class="about">
+          Daniel Leon is a dedicated web designer 
+          from Kingston, Jamaica, known for his innovative 
+          and user-friendly website interfaces.
+        </div>
+        <div class="stats">
+            <div>
+                <strong>7</strong>
+                <span>Posts</span>
+            </div>
+            <div>
+                <strong>100</strong>
+                <span>Following</span>
+            </div>
+            <div>
+                <strong>250</strong>
+                <span>Followers</span>
+            </div>
+        </div>
+        <button class="followbtn">FOLLOW</button>
+    </div>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

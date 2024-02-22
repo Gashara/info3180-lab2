@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from datetime import datetime
 
 
 ###
@@ -45,3 +46,16 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
+@app.route("/profle")
+def profile():
+    return render_template("profile.html",date=format_date_joined("2024-02-20")) 
+
+def format_date_joined(date):
+    # Parse the input date string into a datetime object
+    joined_date = datetime.strptime(date, '%Y-%m-%d')  # Assuming the input date format is YYYY-MM-DD
+    
+    # Format the date as Month, Year
+    formatted_date = joined_date.strftime('%b, %Y')
+    
+    return formatted_date
